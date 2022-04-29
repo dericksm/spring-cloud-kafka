@@ -1,0 +1,8 @@
+spring:
+  elasticsearch:
+    uris: http://${ELASTICSEARCH_HOST:localhost}:${ELASTICSEARCH_REST_PORT:9200}
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 9093

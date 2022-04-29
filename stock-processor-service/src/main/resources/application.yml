@@ -1,0 +1,25 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: ${KAFKA_HOST:localhost}:${KAFKA_PORT:29092}
+          auto-add-partitions: true
+      bindings:
+        stocks-in-0:
+          destination: com.github.dericksm.producer.stocks
+          content-type: application/*+avro
+          group: processorGroup
+          consumer:
+            max-attempts: 4
+            back-off-initial-interval: 10000
+        stocks-out-0:
+          destination: com.github.dericksm.processor.stocks
+          content-type: application/*+avro
+    schema-registry-client:
+      endpoint: http://${SCHEMA_REGISTRY_HOST:localhost}:${SCHEMA_REGISTRY_PORT:8081}
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 9090

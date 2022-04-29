@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="stock-elastic-api" />
+        <module name="commons" />
+        <module name="stock-producer-api" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="stock-collector-service" target="11" />
+      <module name="stock-consumer" target="11" />
+      <module name="stock-processor-service" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="commons" options="-parameters" />
+      <module name="kafka-stuff" options="-parameters" />
+      <module name="stock-collector-service" options="-parameters" />
+      <module name="stock-consumer" options="-parameters" />
+      <module name="stock-elastic-api" options="-parameters" />
+      <module name="stock-processor-service" options="-parameters" />
+      <module name="stock-producer-api" options="-parameters" />
+    </option>
+  </component>
+</project>
