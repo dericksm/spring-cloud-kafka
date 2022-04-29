@@ -20,17 +20,17 @@ For building and running the application you'll need:
 
 ## Modules overview
 
-# stock-producer-api
+### stock-producer-api
 Rest API which uses the AlphaVantage service to search stocks by its ticker and have a response based on daily data.  
 Every time a stock is searched an event is pushed to the `com.github.dericksm.producer.stocks` Kafka topic.
 
-# stock-processor-service
+### stock-processor-service
 It listens to the `com.github.dericksm.producer.stocks` topic and process if the stock had one growth or loss, and then pushes it to `com.github.dericksm.producer.stocks` topic.
 
-# stock-collector-service
+### stock-collector-service
 Listens to the `com.github.dericksm.producer.stocks` topic and stores the data on ElasticSearch.
 
-# stock-elastic-api
+### stock-elastic-api
 Rest API where you can search the data from the previous processed stock data.
 
 ## Environment
